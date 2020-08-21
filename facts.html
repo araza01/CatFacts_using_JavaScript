@@ -3,13 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="./facts.css">
     <script src="./facts.js"></script>
     <title>Document</title>
 </head>
 <body>
-    <h2>CAT Facts:</h2>
-    <div id="cat-fact" onclick="catFact()"></div>
-    <button onclick="catFact()">Get more facts</button>    
+    <section class="container">
+        <article>
+            <div class="header">
+                <h2>Here are some interesting facts about CAT:</h2>
+            </div>
+        </article>
+
+        <article>
+            <div class="loader">Loading<i class="fa fa-spinner fa-spin"></i></div>
+            <div id="cat-fact" ></div>
+        </article>
+
+        <article>
+            <div class="btn">
+                <button>Get more facts</button>
+            </div>
+        </article>
+    </section>
 </body>
 </html>
+
+
