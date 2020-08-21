@@ -1,19 +1,32 @@
+
 const xhr = new XMLHttpRequest();
-xhr.open("GET", "https://cat-fact.herokuapp.com/facts/random", true);
+let xhrURL = "https://cat-fact.herokuapp.com/facts/random?amount=5";
+xhr.open("GET", xhrURL, true);
 xhr.onload = function() {
+    let data = JSON.parse(this.responseText);
     if(this.status == 200 && this.readyState == 4) {
-        document.getElementById("cat-fact").innerHTML = JSON.parse(this.responseText).text;
+        catFact(data);
     }
 };
 xhr.send();
 
-function catFact() {
-    const xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://cat-fact.herokuapp.com/facts/random", true);
-        xhr.onreadystatechange = function() {
-        if(this.status == 200 && this.readyState == 4) {
-            document.getElementById("cat-fact").innerHTML = JSON.parse(this.responseText).text;
-        }
-    };
-    xhr.send();
+function catFact(arr) {
+    let fact = "";
+    for(let i = 0; i < 5; i++) {
+        fact += "<ul>" + "<li>" + arr[i].text + "<br>" + "</li>" + "</ul>";
+    }
+    document.getElementById("cat-fact").innerHTML = fact;
 }
+
+
+$(document).ready(function() {
+    $(document).ajaxStart(function() {
+        $(".loader").show();
+    });
+    $(document).ajaxComplete(function() {
+        $(".loader").hide();
+    });
+    $(".btn").click(function() {
+        $("#cat-fact").load("https://cat-fact.herokuapp.com/facts/random?amount=5");
+    });
+});
