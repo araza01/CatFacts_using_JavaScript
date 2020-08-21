@@ -1,0 +1,44 @@
+body {
+    background-color: #ECF0F1;
+    background-image: url("https://sites.google.com/site/wwwfeliuscatuscom/_/rsrc/1459381996272/cats-background/cute_cat_hd_backgrounds_u220k_wallniku.jpg?height=224&width=400");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    margin: 2% 3% 2% 3%;
+}
+
+.header {
+    font-family: sans-serif;
+}
+
+#cat-fact {
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+.loader {
+    margin: 2% 3%;
+    position: absolute;
+    display: none;
+}
+
+.btn {
+    margin-top: 2%;
+}
+.btn button {
+    font-size: 13px;
+    font-family: sans-serif;
+    padding: 0.3% 0.6%;
+    background: transparent;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    background-color: #5DADE2;
+    cursor: pointer;
+}
+.btn button:hover {
+    background-color: #3498DB;
+}
